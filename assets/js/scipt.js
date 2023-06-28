@@ -351,16 +351,17 @@ form.addEventListener("submit" , (e) => {
                 imgApagar.style.display = "none"
             })
             let imgApagar = e.querySelector(".imgDelete")
-            imgApagar.addEventListener("click", () => {
-                e.remove()
-                console.log(array)
-                if(tarefa.getAttribute("class").includes("remove")){
-                    array.pop(tarefa)
-                    total_items.innerHTML = `${array.length} items left`
-                }
-            })
         })
-    
+        let imgApagar = tarefa.querySelector(".imgDelete")
+
+        imgApagar.addEventListener("click", () => {
+            tarefa.remove()
+            console.log(array)
+            if(tarefa.getAttribute("class").includes("remove")){
+                array.pop(tarefa)
+                total_items.innerHTML = `${array.length} items left`
+            }
+        })
         
 })
 
