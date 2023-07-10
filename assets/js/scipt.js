@@ -197,18 +197,14 @@ form.addEventListener("submit" , (e) => {
                 imgCircle.forEach((img) => {
                     img.style.display = "block"
                 })
-            
 
                 spanTarefa.style.textDecoration = "line-through"
-
-
 
                 if(c.getAttribute("class").includes("clicado")){
                     array.pop(tarefa)
                     total_items.innerHTML = `${array.length} items left`
                 }
 
-                
                 let clonesFilter = document.querySelectorAll(".classClone")
 
                 clonesFilter.forEach((r) => {
@@ -341,26 +337,46 @@ form.addEventListener("submit" , (e) => {
     
         tarefaClone.forEach((e) => {
             e.addEventListener("mouseover" , () => {
-                    let imgApagar = e.querySelector(".imgDelete")
-                    e.classList.add("remove")
-                    imgApagar.style.display = "block"
+                
+                let imgApagar = e.querySelector(".imgDelete")
+                e.classList.add("remove")
+                imgApagar.style.display = "block"
+                
             })
             e.addEventListener("mouseout" , () => {
+               
                 e.classList.remove("remove")
                 let imgApagar = e.querySelector(".imgDelete")
                 imgApagar.style.display = "none"
             })
-            let imgApagar = e.querySelector(".imgDelete")
         })
         let imgApagar = tarefa.querySelector(".imgDelete")
 
         imgApagar.addEventListener("click", () => {
+            
+
+            let circleError = tarefa.querySelector(".cricle")
+
+            circleError.classList.remove("clicado")
+
+            circleError.classList.add("nãoClicado")
+
             tarefa.remove()
-            console.log(array)
-            if(tarefa.getAttribute("class").includes("remove")){
+            
+            if(circleclone.className.includes("ativa")){
                 array.pop(tarefa)
-                total_items.innerHTML = `${array.length} items left`
             }
+             total_items.innerHTML = `${array.length} items left`
+        })
+        
+        circle1.forEach((c) => {
+            c.classList.remove("nãoClicado")
+    
+            c.classList.add("clicado")
+
+            c.classList.remove("clicado")
+    
+            c.classList.add("nãoClicado")
         })
         
 })

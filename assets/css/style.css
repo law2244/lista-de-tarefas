@@ -129,15 +129,48 @@ body{
 .tarefasCompletas{
     flex: 1
 }
+.todos:focus ,
+.tarefas_em_andamento:focus ,
+.tarefasCompletas:focus{
+    color: hsl(220, 98%, 61%)
+}
 .tarefasCompletas{
     margin-right: 20px
 }
 .limparTarefasCompletas{
     flex: 2;
 }
-[src="assets/images/icon-cross.svg"] {
+.imgDelete {
     position: absolute;
     right: 0;
     margin-right: 3rem ;
-    display:  none;
+    display:  none  ;
+}
+.imgDeleteJS {
+    position: absolute;
+    right: 0;
+    margin-right: 3rem ;
+    display:  block  ;
+}
+
+@media (max-width: 570px) {
+    .input_gerador{
+        width: 80vw ;
+    }
+    .fundo h3,
+    .fundo2 h3{
+    color:  hsl(0, 0%, 98%) ;
+    margin-right: 90px;
+    }
+    .controlers span{
+        margin-right: 20px
+    }
+  
+    .imgDelete{
+        display: block;
+    }
+    .fundo{
+        background-size: cover;
+        width: auto;
+    }
 }
