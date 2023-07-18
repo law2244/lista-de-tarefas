@@ -88,7 +88,7 @@ body{
 .abaResultados{
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 1px 1px 20px   hsl(236, 9%, 61%)
+    box-shadow: 1px 1px 20px   hsl(236, 9%, 61%) 
 }
 .result1{
     padding: 15px;
@@ -115,30 +115,21 @@ body{
 }
 .controlers{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px 20px;
     color: hsl(233, 14%, 35%) ;
     font-size: 14px ;
     cursor: pointer;
 }
-.total_items{
-    flex: 2;
-}
-.todos ,
-.tarefas_em_andamento ,
-.tarefasCompletas{
-    flex: 1
-}
+
 .todos:focus ,
 .tarefas_em_andamento:focus ,
 .tarefasCompletas:focus{
     color: hsl(220, 98%, 61%)
 }
-.tarefasCompletas{
-    margin-right: 20px
-}
-.limparTarefasCompletas{
-    flex: 2;
+
+.actions span{
+    margin-left: 15px
 }
 .imgDelete {
     position: absolute;
@@ -152,25 +143,55 @@ body{
     margin-right: 3rem ;
     display:  block  ;
 }
-
+ .classClone:hover .imgDelete{
+    display: block;
+ }
+ .actions2{
+    display: none;
+    display: none;
+    justify-content: space-around;
+    padding: 10px 20px;
+    color: hsl(233, 14%, 35%) ;
+    font-size: 14px ;
+    cursor: pointer;
+    margin-top: 20px ;
+    box-shadow: 2px 2px 10px   hsl(236, 9%, 61%) ;
+    border-radius: 5px
+ }
+ .actions2Dark{
+    display: none;
+    display: none;
+    justify-content: space-around;
+    padding: 10px 20px;
+    color: hsl(233, 14%, 35%) ;
+    font-size: 14px ;
+    cursor: pointer;
+    margin-top: 20px ;
+    border-radius: 5px ;
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 11%, 52%)
+ }
 @media (max-width: 570px) {
-    .input_gerador{
+    .input_gerador ,
+    .controlers{
         width: 80vw ;
+      
     }
     .fundo h3,
     .fundo2 h3{
     color:  hsl(0, 0%, 98%) ;
     margin-right: 90px;
     }
-    .controlers span{
-        margin-right: 20px
-    }
-  
+
     .imgDelete{
         display: block;
     }
-    .fundo{
-        background-size: cover;
-        width: auto;
+
+    .actions{
+        display: none;
+    }
+    .actions2 ,
+    .actions2Dark{
+        display: flex;
     }
 }

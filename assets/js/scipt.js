@@ -63,6 +63,14 @@ imgModeDarkLight.addEventListener("click" , () =>{
 
         abaResultados.style.boxShadow = "none"
 
+        let action2 = document.querySelector("#actions2")
+
+        action2.classList.remove("actions2")
+
+        action2.classList.add("actions2Dark")
+
+        return
+
     } else{
         imgModeDarkLight.setAttribute("src" , "assets/images/icon-moon.svg")
 
@@ -102,6 +110,12 @@ imgModeDarkLight.addEventListener("click" , () =>{
 
         abaResultados.style.boxShadow = "1px 1px 20px   hsl(236, 9%, 61%)"
     }
+
+    let action2 = document.querySelector("#actions2")
+    
+    action2.classList.add("actions2")
+
+    action2.classList.remove("actions2Dark")
 
 })
 
@@ -209,35 +223,44 @@ form.addEventListener("submit" , (e) => {
 
                 clonesFilter.forEach((r) => {
 
-                   let active = document.querySelector(".tarefas_em_andamento")
+                   let active = document.querySelectorAll(".tarefas_em_andamento")
                    
                    let circleForeach = r.querySelector(".cricle")
 
-                   active.addEventListener("click", () => {
-                    console.log("clicou")
-                    if(circleForeach.className.includes("concluida")){
-                        r.style.display = "none"
-                    } else{
-                        r.style.display = "flex"
-                    }
+                   active.forEach((c) => {
+                    c.addEventListener("click", () => {
+                        console.log("clicou")
+                        if(circleForeach.className.includes("concluida")){
+                            r.style.display = "none"
+                        } else{
+                            r.style.display = "flex"
+                        }
+                       })
                    })
 
-                   let completed = document.querySelector(".tarefasCompletas")
+                   let completed = document.querySelectorAll(".tarefasCompletas")
 
-                   completed.addEventListener("click" , () => {
-                    if(circleForeach.className.includes("ativa")){
-                        r.style.display = "none"
-                    } else{
-                        r.style.display = "flex"
-                    }
+                   completed.forEach((c) => {
+                    c.addEventListener("click" , () => {
+                        if(circleForeach.className.includes("ativa")){
+                            r.style.display = "none"
+                        } else{
+                            r.style.display = "flex"
+                        }
+                       })
                    })
 
-                   let all = document.querySelector(".todos")
+                 
 
-                   all.addEventListener("click" , () => {
+                   let all = document.querySelectorAll(".todos")
+
+                   all.forEach((c) => {
+                    
+                   c.addEventListener("click" , () => {
                     if(circleForeach.className.includes("ativa") || circleForeach.className.includes("concluida") ){
                         r.style.display = "flex"
                     }
+                   })
                    })
 
                    let clearTarefas = document.querySelector(".limparTarefasCompletas")
@@ -333,51 +356,43 @@ form.addEventListener("submit" , (e) => {
     total_items.innerHTML = `${array.length} items left`
 
     
-        let tarefaClone = document.querySelectorAll(".classClone")
+    let tarefaClone = document.querySelectorAll(".classClone")
     
-        tarefaClone.forEach((e) => {
-            e.addEventListener("mouseover" , () => {
-                
-                let imgApagar = e.querySelector(".imgDelete")
-                e.classList.add("remove")
-                imgApagar.style.display = "block"
-                
-            })
-            e.addEventListener("mouseout" , () => {
-               
-                e.classList.remove("remove")
-                let imgApagar = e.querySelector(".imgDelete")
-                imgApagar.style.display = "none"
-            })
-        })
-        let imgApagar = tarefa.querySelector(".imgDelete")
-
-        imgApagar.addEventListener("click", () => {
-            
-
-            let circleError = tarefa.querySelector(".cricle")
-
-            circleError.classList.remove("clicado")
-
-            circleError.classList.add("nãoClicado")
-
-            tarefa.remove()
-            
-            if(circleclone.className.includes("ativa")){
-                array.pop(tarefa)
-            }
-             total_items.innerHTML = `${array.length} items left`
-        })
         
-        circle1.forEach((c) => {
-            c.classList.remove("nãoClicado")
-    
-            c.classList.add("clicado")
+    let imgApagar = tarefa.querySelector(".imgDelete")
 
-            c.classList.remove("clicado")
-    
-            c.classList.add("nãoClicado")
-        })
+    imgApagar.addEventListener("click", () => {
+            
+
+        let circleError = tarefa.querySelector(".cricle")
+
+        circleError.classList.remove("clicado")
+
+        circleError.classList.add("nãoClicado")
+
+        tarefa.remove()
+            
+        if(circleclone.className.includes("ativa")){
+            array.pop(tarefa)
+        }
+            total_items.innerHTML = `${array.length} items left`
+    })
+        
+    circleclone.classList.add("clicado")
+
+    circleclone.classList.add("concluida")
+
+    circleclone.classList.remove("nãoClicado")
+
+    circleclone.classList.remove("ativa")
+
+    circleclone.classList.remove("clicado")
+
+    circleclone.classList.remove("concluida")
+
+    circleclone.classList.add("nãoClicado")
+
+    circleclone.classList.add("ativa")
         
 })
 
