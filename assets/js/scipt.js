@@ -378,21 +378,6 @@ form.addEventListener("submit" , (e) => {
             total_items.innerHTML = `${array.length} items left`
     })
         
-    circleclone.classList.add("clicado")
-
-    circleclone.classList.add("concluida")
-
-    circleclone.classList.remove("nãoClicado")
-
-    circleclone.classList.remove("ativa")
-
-    circleclone.classList.remove("clicado")
-
-    circleclone.classList.remove("concluida")
-
-    circleclone.classList.add("nãoClicado")
-
-    circleclone.classList.add("ativa")
         
 })
 
