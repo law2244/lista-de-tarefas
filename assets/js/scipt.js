@@ -269,10 +269,6 @@ form.addEventListener("submit" , (e) => {
                         if(r.querySelector(".cricle").getAttribute("class").includes("clicado")){
                                 let circleForaEach = r.querySelector(".cricle")
 
-                                circleForaEach.classList.remove("concluida")
-
-                                circleForaEach.classList.add("ativa")
-
                                 let imgCircle = r.querySelector(".cricle img")
 
                                 imgCircle.style.display = "none"
@@ -289,10 +285,9 @@ form.addEventListener("submit" , (e) => {
 
                                 spanForeach.style.textDecoration = "none"
 
-                                if(c.getAttribute("class").includes("nãoClicado")){
-                                    array.push(tarefa)
-                                    total_items.innerHTML = `${array.length} items left`
-                                }
+                                array.push(tarefa)
+
+                                total_items.innerHTML = `${array.length} items left`
                         }
                    })
 
@@ -378,6 +373,6 @@ form.addEventListener("submit" , (e) => {
             total_items.innerHTML = `${array.length} items left`
     })
         
-        
+    
 })
 
