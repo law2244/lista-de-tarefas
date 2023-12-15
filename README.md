@@ -19,3 +19,5 @@ limpar todas as tarefas concluidas tranformando elas em não concluidas
 apgar tarefas da lista
 
 possui um modo claro e um escuro , em que a cores mudam e imagem de fundo tambem 
+
+![image](https://github.com/law2244/lista-de-tarefas/assets/132855628/8241bd30-a801-40f1-80e9-e3873fbaca8f)
